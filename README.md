@@ -73,42 +73,77 @@ npm run preview
 | `npm run format` | 格式化代码 |
 | `npm run format:check` | 检查代码格式 |
 | `npm run type-check` | TypeScript 类型检查 |
+| `npm run check` | 运行所有检查（lint + type + format） |
+| `npm run pre-commit-check` | 完整的提交前检查 |
 
 ## 📁 项目结构
 
 ```
 react-typescript-project/
-├── .husky/                 # Git hooks 配置
-│   ├── pre-commit         # 提交前检查
-│   └── commit-msg         # 提交信息检查
-├── docs/                   # 项目文档
-│   ├── CODE_STYLE_GUIDE.md      # 代码风格指南
-│   ├── GIT_COMMIT_GUIDE.md      # Git 提交规范
-│   ├── COMMIT_EXAMPLES.md       # 提交信息示例
-│   ├── SKILLSAI_GUIDE.md        # SkillsAI 规范（待完成）
-│   └── PROJECT_SPEC.md          # 项目规范（待完成）
-├── public/                 # 静态资源
-├── src/                    # 源代码
-│   ├── components/        # React 组件
-│   │   ├── common/       # 通用组件
-│   │   └── features/     # 功能组件
-│   ├── hooks/            # 自定义 Hooks
-│   ├── utils/            # 工具函数
-│   ├── types/            # TypeScript 类型定义
-│   ├── styles/           # 全局样式
-│   ├── App.tsx           # 根组件
-│   ├── main.tsx          # 应用入口
-│   └── vite-env.d.ts     # Vite 环境类型
-├── .env.example           # 环境变量示例
-├── .eslintrc.json         # ESLint 配置
-├── .prettierrc            # Prettier 配置
-├── .gitignore             # Git 忽略文件
-├── commitlint.config.js   # Commitlint 配置
-├── tsconfig.json          # TypeScript 配置
-├── vite.config.ts         # Vite 配置
-├── package.json           # 项目依赖
-└── README.md              # 项目文档
+├── .husky/                      # Git hooks 配置
+├── .kiro/                       # Kiro 配置和规范文档
+├── docs/                        # 项目文档
+│   ├── CODE_STYLE_GUIDE.md     # 代码风格指南
+│   ├── CODE_REVIEW_GUIDE.md    # 代码审查规范
+│   ├── QUALITY_CHECKLIST.md    # 质量检查清单
+│   ├── GIT_COMMIT_GUIDE.md     # Git 提交规范
+│   ├── COMMIT_EXAMPLES.md      # 提交信息示例
+│   ├── PROJECT_STRUCTURE.md    # 项目结构规范 ⭐
+│   └── SETUP_COMPLETE.md       # 设置完成说明
+├── public/                      # 静态资源
+├── scripts/                     # 脚本文件
+│   ├── pre-commit-check.sh     # 代码检查脚本（Linux/Mac）
+│   └── pre-commit-check.ps1    # 代码检查脚本（Windows）
+├── src/                         # 源代码目录
+│   ├── assets/                 # 资源文件
+│   ├── components/             # 组件目录
+│   │   ├── common/            # 通用组件（Button, Input 等）
+│   │   │   └── Button/
+│   │   │       ├── Button.tsx
+│   │   │       ├── Button.test.tsx
+│   │   │       ├── Button.module.css
+│   │   │       └── index.ts
+│   │   ├── features/          # 功能组件
+│   │   └── layout/            # 布局组件
+│   ├── pages/                  # 页面组件（路由入口）⭐
+│   │   ├── Home/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Home.test.tsx
+│   │   │   └── index.ts
+│   │   └── About/
+│   ├── routes/                 # 路由配置（待添加）
+│   ├── hooks/                  # 自定义 Hooks ⭐
+│   │   ├── useLocalStorage.ts
+│   │   ├── useLocalStorage.test.ts
+│   │   ├── useToggle.ts
+│   │   └── useToggle.test.ts
+│   ├── utils/                  # 工具函数 ⭐
+│   │   ├── format.ts
+│   │   ├── format.test.ts
+│   │   ├── validation.ts
+│   │   └── validation.test.ts
+│   ├── types/                  # TypeScript 类型定义 ⭐
+│   │   ├── common.types.ts
+│   │   ├── api.types.ts
+│   │   └── user.types.ts
+│   ├── constants/              # 常量定义
+│   │   ├── api.constants.ts
+│   │   └── app.constants.ts
+│   ├── services/               # API 服务（待添加）
+│   ├── config/                 # 配置文件（待添加）
+│   ├── styles/                 # 全局样式
+│   ├── App.tsx                 # 根组件
+│   ├── main.tsx                # 应用入口
+│   └── vite-env.d.ts          # Vite 类型定义
+├── tests/                       # 测试配置（待添加）
+├── .env.example                # 环境变量示例
+├── package.json                # 项目依赖
+└── README.md                   # 项目文档
+
+⭐ = 包含测试文件
 ```
+
+详细的目录结构说明请查看 [项目结构规范文档](./docs/PROJECT_STRUCTURE.md)。
 
 ## 📖 开发规范
 
@@ -121,6 +156,25 @@ react-typescript-project/
 - **命名规范**：组件使用 PascalCase，函数/变量使用 camelCase
 - **组件规范**：使用函数组件和 TypeScript 接口
 - **导入顺序**：React → 第三方库 → 项目内部 → 样式
+
+### 代码审查规范
+
+**防止"雷代码"提交！** 详见 [代码审查指南](./docs/CODE_REVIEW_GUIDE.md)。
+
+**提交前必须检查：**
+- ✅ 无 `console.log` 调试代码
+- ✅ 无 `any` 类型
+- ✅ 无注释掉的代码
+- ✅ 类型定义完整
+- ✅ 错误处理完善
+- ✅ 资源清理正确
+
+**快速检查命令：**
+```bash
+npm run check  # 运行所有检查
+```
+
+查看 [代码质量检查清单](./docs/QUALITY_CHECKLIST.md) 获取快速参考。
 
 ### Git 提交规范
 
@@ -223,9 +277,17 @@ import { Button } from '@/components/Button'
 
 ## 📚 更多文档
 
+### 核心文档
+- **[项目结构规范](./docs/PROJECT_STRUCTURE.md)** ⭐ - 完整的目录结构和命名规范
 - [代码风格指南](./docs/CODE_STYLE_GUIDE.md) - 详细的代码规范
+- [代码审查指南](./docs/CODE_REVIEW_GUIDE.md) - 防止雷代码的审查规范
+- [代码质量检查清单](./docs/QUALITY_CHECKLIST.md) - 快速参考清单
+
+### Git 相关
 - [Git 提交规范](./docs/GIT_COMMIT_GUIDE.md) - 完整的提交规范说明
 - [提交示例速查](./docs/COMMIT_EXAMPLES.md) - 快速参考提交格式
+
+### 待完成
 - [SkillsAI 规范](./docs/SKILLSAI_GUIDE.md) - AI 辅助开发指南（待完成）
 - [项目规范](./docs/PROJECT_SPEC.md) - 项目开发规范（待完成）
 
