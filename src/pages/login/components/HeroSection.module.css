@@ -16,7 +16,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/yaoxiaotang-stage.jpg');
+  /* 临时使用渐变背景，等待上传真实图片后替换 */
+  background: linear-gradient(135deg, #89b9d3 0%, #7b9fd3 50%, #6a8fd3 100%);
   background-size: cover;
   background-position: center 40%;
   z-index: 0;
