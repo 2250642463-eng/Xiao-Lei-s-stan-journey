@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.leftPanel,
+.rightPanel {
+  flex: 1;
+  min-height: 100vh;
+}
+
+.leftPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    min-height: 50vh;
+  }
+}
