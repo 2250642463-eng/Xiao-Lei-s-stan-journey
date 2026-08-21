@@ -51,10 +51,10 @@ if ($anyTypes) {
 
 # 4. 运行 ESLint
 Write-Host "[4/7] 运行 ESLint 检查..." -ForegroundColor Yellow
-npm run lint --silent
+pnpm lint --silent
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ ESLint 检查失败" -ForegroundColor Red
-    Write-Host "   运行 'npm run lint:fix' 尝试自动修复`n" -ForegroundColor Yellow
+    Write-Host "   运行 'pnpm lint:fix' 尝试自动修复`n" -ForegroundColor Yellow
     $ErrorCount++
 } else {
     Write-Host "✓ ESLint 检查通过`n" -ForegroundColor Green
@@ -62,7 +62,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # 5. 运行 TypeScript 类型检查
 Write-Host "[5/7] 运行 TypeScript 类型检查..." -ForegroundColor Yellow
-npm run type-check --silent
+pnpm type-check --silent
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ TypeScript 类型检查失败" -ForegroundColor Red
     Write-Host "   修复代码中的类型错误`n" -ForegroundColor Yellow
@@ -73,10 +73,10 @@ if ($LASTEXITCODE -ne 0) {
 
 # 6. 检查代码格式
 Write-Host "[6/7] 检查代码格式..." -ForegroundColor Yellow
-npm run format:check --silent
+pnpm format:check --silent
 if ($LASTEXITCODE -ne 0) {
     Write-Host "⚠️  代码格式需要调整" -ForegroundColor Yellow
-    Write-Host "   运行 'npm run format' 自动格式化`n" -ForegroundColor Yellow
+    Write-Host "   运行 'pnpm format' 自动格式化`n" -ForegroundColor Yellow
 } else {
     Write-Host "✓ 代码格式正确`n" -ForegroundColor Green
 }

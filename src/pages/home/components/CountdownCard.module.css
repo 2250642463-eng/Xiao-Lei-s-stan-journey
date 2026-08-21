@@ -1,0 +1,86 @@
+.container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeValue {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  min-width: 70px;
+}
+
+.timeLabel {
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.separator {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ddd;
+  margin: 0 0.2rem;
+  padding-bottom: 1.5rem;
+}
+
+.celebration {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 0;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .timeValue {
+    font-size: 2.2rem;
+    min-width: 55px;
+  }
+
+  .timeLabel {
+    font-size: 0.8rem;
+  }
+
+  .separator {
+    font-size: 2rem;
+  }
+
+  .celebration {
+    font-size: 2rem;
+  }
+}

@@ -5,7 +5,7 @@
 在运行 `git commit` 之前，快速过一遍：
 
 ### ⚡ 快速检查（必须）
-- [ ] 代码能运行（`npm run dev` 正常）
+- [ ] 代码能运行（`pnpm dev` 正常）
 - [ ] 无 `console.log`
 - [ ] 无注释掉的代码
 - [ ] 无 `any` 类型
@@ -14,12 +14,12 @@
 ### 🔧 自动检查命令
 ```bash
 # 一键运行所有检查
-npm run check
+pnpm check
 
 # 或手动运行
-npm run lint          # ESLint 检查
-npm run type-check    # TypeScript 检查
-npm run format:check  # 格式检查
+pnpm lint          # ESLint 检查
+pnpm type-check    # TypeScript 检查
+pnpm format:check  # 格式检查
 ```
 
 ## ❌ 10 种常见"雷代码"
@@ -184,9 +184,9 @@ if (!c) return
 
 ## 🔍 自动检查工具
 
-### 方式 1: 使用 npm 脚本
+### 方式 1: 使用 pnpm 脚本
 ```bash
-npm run check
+pnpm check
 ```
 
 ### 方式 2: 使用 PowerShell 脚本
@@ -204,25 +204,25 @@ git commit -m "feat: 你的提交"
 
 ### 自动修复 ESLint 错误
 ```bash
-npm run lint:fix
+pnpm lint:fix
 ```
 
 ### 自动格式化代码
 ```bash
-npm run format
+pnpm format
 ```
 
 ### 查看类型错误
 ```bash
-npm run type-check
+pnpm type-check
 ```
 
 ## 🚨 如果检查失败
 
 ### ESLint 错误
 ```bash
-npm run lint        # 查看错误
-npm run lint:fix    # 自动修复
+pnpm lint        # 查看错误
+pnpm lint:fix    # 自动修复
 ```
 
 ### 类型错误
@@ -232,7 +232,7 @@ npm run lint:fix    # 自动修复
 
 ### 格式错误
 ```bash
-npm run format      # 自动格式化
+pnpm format      # 自动格式化
 ```
 
 ## 📖 详细文档

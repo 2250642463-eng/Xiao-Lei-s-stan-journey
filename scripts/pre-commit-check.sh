@@ -58,10 +58,10 @@ fi
 
 # 5. 运行 ESLint
 echo -e "${YELLOW}[5/7]${NC} 运行 ESLint 检查..."
-npm run lint --silent
+pnpm lint --silent
 if [ $? -ne 0 ]; then
     echo -e "${RED}❌ ESLint 检查失败${NC}"
-    echo -e "${YELLOW}   运行 'npm run lint:fix' 尝试自动修复${NC}\n"
+    echo -e "${YELLOW}   运行 'pnpm lint:fix' 尝试自动修复${NC}\n"
     ERROR_COUNT=$((ERROR_COUNT + 1))
 else
     echo -e "${GREEN}✓ ESLint 检查通过${NC}\n"
@@ -69,7 +69,7 @@ fi
 
 # 6. 运行 TypeScript 类型检查
 echo -e "${YELLOW}[6/7]${NC} 运行 TypeScript 类型检查..."
-npm run type-check --silent
+pnpm type-check --silent
 if [ $? -ne 0 ]; then
     echo -e "${RED}❌ TypeScript 类型检查失败${NC}"
     echo -e "${YELLOW}   修复代码中的类型错误${NC}\n"
@@ -80,10 +80,10 @@ fi
 
 # 7. 检查代码格式
 echo -e "${YELLOW}[7/7]${NC} 检查代码格式..."
-npm run format:check --silent
+pnpm format:check --silent
 if [ $? -ne 0 ]; then
     echo -e "${YELLOW}⚠️  代码格式需要调整${NC}"
-    echo -e "${YELLOW}   运行 'npm run format' 自动格式化${NC}\n"
+    echo -e "${YELLOW}   运行 'pnpm format' 自动格式化${NC}\n"
 else
     echo -e "${GREEN}✓ 代码格式正确${NC}\n"
 fi

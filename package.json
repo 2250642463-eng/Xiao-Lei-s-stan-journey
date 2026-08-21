@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,10 +18,12 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
     "type-check": "tsc --noEmit",
     "prepare": "husky install",
-    "check": "npm run lint && npm run type-check && npm run format:check",
+    "check": "pnpm lint && pnpm type-check && pnpm format:check",
     "pre-commit-check": "powershell -ExecutionPolicy Bypass -File ./scripts/pre-commit-check.ps1"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "antd": "^5.22.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

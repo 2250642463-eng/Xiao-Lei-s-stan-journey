@@ -70,18 +70,18 @@ git commit -m "docs: 更新 README"
 
 ### 开发命令
 ```bash
-npm run dev          # 启动开发服务器
-npm run build        # 构建生产版本
-npm run preview      # 预览生产构建
+pnpm dev          # 启动开发服务器
+pnpm build        # 构建生产版本
+pnpm preview      # 预览生产构建
 ```
 
 ### 代码检查命令
 ```bash
-npm run lint         # 运行 ESLint 检查
-npm run lint:fix     # 自动修复 ESLint 错误
-npm run format       # 格式化代码
-npm run format:check # 检查代码格式
-npm run type-check   # TypeScript 类型检查
+pnpm lint         # 运行 ESLint 检查
+pnpm lint:fix     # 自动修复 ESLint 错误
+pnpm format       # 格式化代码
+pnpm format:check # 检查代码格式
+pnpm type-check   # TypeScript 类型检查
 ```
 
 ### Git 命令
@@ -99,17 +99,17 @@ git push origin main
 
 1. **ESLint 错误：**
    ```bash
-   npm run lint:fix  # 尝试自动修复
+   pnpm lint:fix  # 尝试自动修复
    ```
 
 2. **Prettier 格式错误：**
    ```bash
-   npm run format    # 格式化代码
+   pnpm format    # 格式化代码
    ```
 
 3. **TypeScript 类型错误：**
    - 修复代码中的类型问题
-   - 运行 `npm run type-check` 查看错误
+   - 运行 `pnpm type-check` 查看错误
 
 4. **Commit 信息不符合规范：**
    - 使用正确的 type（feat, fix, docs 等）
@@ -145,7 +145,7 @@ git commit --no-verify -m "emergency fix"
 
 1. **开始开发：**
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 2. **创建新功能分支：**

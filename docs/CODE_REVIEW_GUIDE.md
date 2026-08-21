@@ -146,13 +146,13 @@ if (user.status === USER_STATUS.ACTIVE) { }
 在提交代码前，**必须**确认以下所有项：
 
 - [ ] **代码可以运行**
-  - `npm run dev` 正常启动
+  - `pnpm dev` 正常启动
   - 无控制台错误
 
 - [ ] **所有自动检查通过**
-  - `npm run lint` - ESLint 检查通过
-  - `npm run type-check` - TypeScript 类型检查通过
-  - `npm run format:check` - 代码格式正确
+  - `pnpm lint` - ESLint 检查通过
+  - `pnpm type-check` - TypeScript 类型检查通过
+  - `pnpm format:check` - 代码格式正确
 
 - [ ] **没有 console.log 调试代码**
   - 移除所有调试用的 console.log
@@ -368,31 +368,31 @@ function UserProfile() {
 ### 运行所有检查
 ```bash
 # 一次性运行所有检查
-npm run lint && npm run type-check && npm run format:check
+pnpm lint && pnpm type-check && pnpm format:check
 ```
 
 ### ESLint 检查
 ```bash
 # 检查所有问题
-npm run lint
+pnpm lint
 
 # 自动修复
-npm run lint:fix
+pnpm lint:fix
 ```
 
 ### TypeScript 检查
 ```bash
 # 类型检查
-npm run type-check
+pnpm type-check
 ```
 
 ### 格式检查
 ```bash
 # 检查格式
-npm run format:check
+pnpm format:check
 
 # 自动格式化
-npm run format
+pnpm format
 ```
 
 ## 📊 代码审查标准

@@ -440,19 +440,19 @@ items.push(newItem)
 
 ```bash
 # 类型检查
-npm run type-check
+pnpm type-check
 
 # 代码检查
-npm run lint
+pnpm lint
 
 # 自动修复
-npm run lint:fix
+pnpm lint:fix
 
 # 格式化
-npm run format
+pnpm format
 
 # 格式检查（不修改文件）
-npm run format:check
+pnpm format:check
 ```
 
 ## 参考资源

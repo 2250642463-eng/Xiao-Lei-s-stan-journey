@@ -26,7 +26,7 @@
 ### 环境要求
 
 - Node.js >= 18.0.0
-- npm >= 9.0.0 或 pnpm >= 8.0.0
+- pnpm >= 8.0.0
 
 ### 安装
 
@@ -36,17 +36,17 @@ git clone <repository-url>
 cd react-typescript-project
 
 # 安装依赖
-npm install
+pnpm install
 
 # 初始化 Git hooks
-npm run prepare
+pnpm prepare
 ```
 
 ### 开发
 
 ```bash
 # 启动开发服务器
-npm run dev
+pnpm dev
 
 # 开发服务器将运行在 http://localhost:5173
 ```
@@ -55,26 +55,26 @@ npm run dev
 
 ```bash
 # 构建生产版本
-npm run build
+pnpm build
 
 # 预览生产构建
-npm run preview
+pnpm preview
 ```
 
 ## 📜 可用脚本
 
 | 命令 | 说明 |
 |------|------|
-| `npm run dev` | 启动开发服务器 |
-| `npm run build` | 构建生产版本 |
-| `npm run preview` | 预览生产构建 |
-| `npm run lint` | 运行 ESLint 检查 |
-| `npm run lint:fix` | 自动修复 ESLint 错误 |
-| `npm run format` | 格式化代码 |
-| `npm run format:check` | 检查代码格式 |
-| `npm run type-check` | TypeScript 类型检查 |
-| `npm run check` | 运行所有检查（lint + type + format） |
-| `npm run pre-commit-check` | 完整的提交前检查 |
+| `pnpm dev` | 启动开发服务器 |
+| `pnpm build` | 构建生产版本 |
+| `pnpm preview` | 预览生产构建 |
+| `pnpm lint` | 运行 ESLint 检查 |
+| `pnpm lint:fix` | 自动修复 ESLint 错误 |
+| `pnpm format` | 格式化代码 |
+| `pnpm format:check` | 检查代码格式 |
+| `pnpm type-check` | TypeScript 类型检查 |
+| `pnpm check` | 运行所有检查（lint + type + format） |
+| `pnpm pre-commit-check` | 完整的提交前检查 |
 
 ## 📁 项目结构
 
@@ -171,7 +171,7 @@ react-typescript-project/
 
 **快速检查命令：**
 ```bash
-npm run check  # 运行所有检查
+pnpm check  # 运行所有检查
 ```
 
 查看 [代码质量检查清单](./docs/QUALITY_CHECKLIST.md) 获取快速参考。

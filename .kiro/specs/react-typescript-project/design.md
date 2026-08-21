@@ -11,7 +11,7 @@
 - **构建工具**: Vite 5.x
 - **代码检查**: ESLint + TypeScript ESLint
 - **代码格式化**: Prettier
-- **包管理器**: npm/yarn/pnpm（推荐 pnpm）
+- **包管理器**: pnpm
 
 ## Architecture
 
@@ -324,7 +324,7 @@ interface FormState<T> {
 
 ### 构建错误
 
-- **依赖缺失**: npm/pnpm 将报告缺失的依赖
+- **依赖缺失**: pnpm 将报告缺失的依赖
 - **类型错误**: 构建前 TypeScript 编译将失败
 - **打包错误**: Vite 将报告模块解析和打包错误
 
@@ -397,11 +397,11 @@ describe('Project Structure Tests', () => {
 ```typescript
 describe('Build and Development Tests', () => {
   it('should build without errors', async () => {
-    // 运行 npm run build 并验证成功
+    // 运行 pnpm build 并验证成功
   });
 
   it('should start dev server', async () => {
-    // 运行 npm run dev 并验证服务器启动
+    // 运行 pnpm dev 并验证服务器启动
   });
 });
 ```
@@ -436,7 +436,7 @@ export default defineConfig({
 2. ESLint 检查 (`eslint . --ext ts,tsx`)
 3. Prettier 格式检查 (`prettier --check "src/**/*.{ts,tsx}"`)
 4. 单元测试 (`vitest run`)
-5. 构建测试 (`npm run build`)
+5. 构建测试 (`pnpm build`)
 
 ## SkillsAI 规范文档内容
 
@@ -518,12 +518,12 @@ export default defineConfig({
 
 ### 开发工作流
 
-1. **开发**: `npm run dev` - 启动开发服务器
-2. **类型检查**: `npm run type-check` - 运行 TypeScript 类型检查
-3. **代码检查**: `npm run lint` - 运行 ESLint
-4. **格式化**: `npm run format` - 运行 Prettier
-5. **测试**: `npm run test` - 运行测试套件
-6. **构建**: `npm run build` - 构建生产版本
+1. **开发**: `pnpm dev` - 启动开发服务器
+2. **类型检查**: `pnpm type-check` - 运行 TypeScript 类型检查
+3. **代码检查**: `pnpm lint` - 运行 ESLint
+4. **格式化**: `pnpm format` - 运行 Prettier
+5. **测试**: `pnpm test` - 运行测试套件
+6. **构建**: `pnpm build` - 构建生产版本
 
 ### 扩展建议
 

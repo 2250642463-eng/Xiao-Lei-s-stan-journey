@@ -302,12 +302,12 @@
     - **Validates: Requirements 9.1, 9.2, 9.3, 9.4**
 
 - [ ] 17. 最终验证检查点
-  - 运行 `npm run type-check` 确保无类型错误
-  - 运行 `npm run lint` 确保无 lint 错误
-  - 运行 `npm run format` 格式化所有代码
-  - 运行 `npm run test` 确保所有测试通过
-  - 运行 `npm run build` 确保可以成功构建
-  - 运行 `npm run dev` 确保开发服务器可以启动
+  - 运行 `pnpm type-check` 确保无类型错误
+  - 运行 `pnpm lint` 确保无 lint 错误
+  - 运行 `pnpm format` 格式化所有代码
+  - 运行 `pnpm test` 确保所有测试通过
+  - 运行 `pnpm build` 确保可以成功构建
+  - 运行 `pnpm dev` 确保开发服务器可以启动
   - 如有问题，询问用户并解决
 
 ## Notes

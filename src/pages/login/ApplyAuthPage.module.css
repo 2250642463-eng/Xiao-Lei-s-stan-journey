@@ -1,0 +1,334 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 2rem;
+}
+
+.card,
+.successCard {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 3rem 2.5rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
+  max-width: 520px;
+  width: 100%;
+  border: 1px solid rgba(115, 200, 232, 0.2);
+  position: relative;
+}
+
+.backLink {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0;
+}
+
+.backLink:hover {
+  color: #73c8e8;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.required {
+  color: #ff4757;
+  font-weight: 600;
+}
+
+.optional {
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.input,
+.textarea,
+.select {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fafafa;
+  font-family: inherit;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: #73c8e8;
+  box-shadow: 0 0 0 4px rgba(115, 200, 232, 0.12);
+  background: white;
+  transform: translateY(-1px);
+}
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: #b8e4f5;
+  background: white;
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.submitButton {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #73c8e8 100%);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(115, 200, 232, 0.5);
+  background-position: 100% 0;
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 成功页面样式 */
+.successCard {
+  text-align: center;
+  padding: 4rem 3rem;
+}
+
+.successIcon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+}
+
+.successSubtitle {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.authCodeDisplay {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.authCodeLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.authCodeValue {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: #667eea;
+  font-family: 'Courier New', monospace;
+  user-select: all;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.warning {
+  background: #fff3cd;
+  color: #856404;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ffeaa7;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.copyButton {
+  height: 3rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s !important;
+}
+
+.copyButton:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+.backButton {
+  height: 3rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  background: white !important;
+  color: #667eea !important;
+  border: 2px solid #667eea !important;
+  transition: all 0.3s !important;
+}
+
+.backButton:hover {
+  background: #667eea !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .card,
+  .successCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .successIcon {
+    font-size: 4rem;
+  }
+
+  .authCodeValue {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+  }
+}

@@ -43,16 +43,16 @@ tests/
 
 ```bash
 # 运行所有测试
-npm run test
+pnpm test
 
 # 运行特定测试文件
-npm run test AdCard.test.jsx
+pnpm test AdCard.test.jsx
 
 # 运行测试并查看覆盖率
-npm run test:coverage
+pnpm test:coverage
 
 # 监听模式
-npm run test:watch
+pnpm test:watch
 ```
 
 ## 测试覆盖率要求

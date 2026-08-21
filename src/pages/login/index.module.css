@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* 整体统一渐变背景 - 从浅蓝到蓝紫 */
+  background: linear-gradient(135deg, #a8d8ea 0%, #7b9fd3 50%, #7b68ee 100%);
+}
+
+/* 添加统一的星星背景 */
+.container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(1px 1px at 15% 15%, white, transparent),
+    radial-gradient(1px 1px at 8% 45%, white, transparent),
+    radial-gradient(1px 1px at 12% 80%, white, transparent),
+    radial-gradient(1px 1px at 70% 12%, white, transparent),
+    radial-gradient(1px 1px at 85% 35%, white, transparent),
+    radial-gradient(2px 2px at 75% 65%, white, transparent),
+    radial-gradient(1px 1px at 92% 85%, white, transparent);
+  background-size: 100% 100%;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 左侧面板 */
+.leftPanel {
+  flex: 1;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 右侧面板 */
+.rightPanel {
+  flex: 1;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* 大星星装饰 - 只保留4颗 */
+.starDecor {
+  position: absolute;
+  color: white;
+  opacity: 0.85;
+  animation: starGlow 4s ease-in-out infinite;
+  text-shadow:
+    0 0 15px rgba(255, 255, 255, 0.9),
+    0 0 25px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.star1 {
+  top: 15%;
+  right: 20%;
+  font-size: 3rem;
+  animation-delay: 0s;
+}
+
+.star2 {
+  top: 45%;
+  right: 8%;
+  font-size: 2rem;
+  animation-delay: 1.5s;
+}
+
+.star3 {
+  bottom: 15%;
+  right: 18%;
+  font-size: 2.5rem;
+  animation-delay: 0.8s;
+}
+
+.star4 {
+  bottom: 12%;
+  left: 8%;
+  font-size: 2rem;
+  animation-delay: 2s;
+}
+
+/* 隐藏多余星星 */
+.star5,
+.star6,
+.star7,
+.star8 {
+  display: none;
+}
+
+@keyframes starGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    min-height: 50vh;
+  }
+
+  .starDecor {
+    font-size: 1.5rem !important;
+  }
+}

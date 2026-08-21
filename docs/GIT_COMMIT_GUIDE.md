@@ -133,9 +133,9 @@ Fixes #456, #457
 
 在提交代码之前，确保：
 
-- [ ] 代码已经过 ESLint 检查（`npm run lint`）
-- [ ] 代码已格式化（`npm run format`）
-- [ ] TypeScript 类型检查通过（`npm run type-check`）
+- [ ] 代码已经过 ESLint 检查（`pnpm lint`）
+- [ ] 代码已格式化（`pnpm format`）
+- [ ] TypeScript 类型检查通过（`pnpm type-check`）
 - [ ] Commit 信息符合规范格式
 - [ ] 相关文档已更新
 - [ ] 测试已通过（如有）
@@ -191,7 +191,7 @@ Fixes #456, #457
 
 **解决方法**: 
 ```bash
-npm run lint:fix  # 自动修复
+pnpm lint:fix  # 自动修复
 # 或手动修复代码问题
 ```
 
@@ -233,7 +233,7 @@ git commit --no-verify -m "emergency fix"
 
 ```bash
 # 使用 commitizen 生成规范的 commit（可选）
-npm install -g commitizen
+pnpm add -g commitizen
 git cz  # 替代 git commit
 ```
 

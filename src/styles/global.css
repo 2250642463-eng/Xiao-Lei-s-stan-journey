@@ -1,3 +1,6 @@
+/* Ant Design CSS */
+@import 'antd/dist/reset.css';
+
 /* CSS Reset */
 *,
 *::before,

@@ -124,7 +124,7 @@ git commit -m "docs: 更新 API 文档"
 
 ```bash
 # 测试 commit 信息
-echo "feat: 添加新功能" | npx commitlint
+echo "feat: 添加新功能" | pnpm exec commitlint
 
 # 如果输出没有错误，说明符合规范
 ```
@@ -135,13 +135,13 @@ echo "feat: 添加新功能" | npx commitlint
 
 ```bash
 # 查看具体错误
-npm run lint
+pnpm lint
 
 # 自动修复
-npm run lint:fix
+pnpm lint:fix
 
 # 类型检查
-npm run type-check
+pnpm type-check
 ```
 
 ### Commit 信息不符合规范

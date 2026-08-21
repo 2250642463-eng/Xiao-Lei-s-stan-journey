@@ -3,12 +3,9 @@
 
 echo "🔍 运行 pre-commit 检查..."
 
-# 运行 lint-staged（代码检查和格式化）
-npx lint-staged
+pnpm exec lint-staged
 
-# 运行 TypeScript 类型检查
 echo "🔷 TypeScript 类型检查..."
-npm run type-check
+pnpm type-check
 
 echo "✅ Pre-commit 检查通过！"
-npx lint-staged && npm run type-check
